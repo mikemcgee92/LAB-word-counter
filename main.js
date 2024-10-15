@@ -3,13 +3,20 @@ console.log("Connected!")
 const wordCounter = (value) => {
   // Type into the input and press submit, you will see the value you entered in your console
   console.log(value);
+  
 
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    let words = 0;
+    for (let i = 0; i < value.length; i++) {
+      if (value[i] == " ") {
+        words++;
+      }
+    }
+    wordCount.innerHTML = `Word Count: ${words + 1}`; //use a for loop to count the number of spaces in the string 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
 

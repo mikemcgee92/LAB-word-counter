@@ -22,8 +22,26 @@ const wordCounter = (value) => {
 
 // OPTIONAL CHALLENGE
 const toggleMode = (btnText) => {
+  if (btnText == "Dark Mode") {
+    btnText = "Light Mode"
+  } else {
+    btnText = "Dark Mode"
+  }
+  return btnText
   // complete the function
 }
+
+const bgSwitch = document.querySelector("#bg-switch")
+const body = document.querySelector("body")
+
+bgSwitch.addEventListener("click", () => {
+  if (body.style.backgroundColor === "white") {
+    body.style.backgroundColor = "black";
+  } else {
+    body.style.backgroundColor = "white";
+  }
+  bgSwitch.innerHTML = toggleMode(bgSwitch.innerHTML)
+})
 
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
